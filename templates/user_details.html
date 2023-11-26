@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block link %}
+<link rel="stylesheet" href="/static/app.css">
+{% endblock %}
+
+{% block content %}
+
+<h1>User Detail Page</h1>
+
+<img src={{user.image_url}} alt="{{user.first_name}}">
+
+{{user.first_name}} {{user.last_name}}
+
+
+<form>
+    <button formaction="/user/{{user.id}}/edit" formmethod="GET">Edit</button>
+
+    <button formaction="/users/{{user.id}}/delete" formmethod="POST">Delete</button>
+</form>
+
+
+
+
+{% endblock %}
+<!-- We are getting the user's info out of this user object bu writing the name fo the object and then the key-name.-->
+<!-- user = {User id=1 first_name=Alan last_name=Alda image_url=https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png} -->
+<!-- There's another way you can write the button eleemtn in the same form adn each button will send to a
+different route. look at Microsoft One Note - Forms. -->

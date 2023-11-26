@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block link %}
+<link rel="stylesheet" href="/static/app.css">
+{% endblock %}
+
+{% block content %}
+
+<h1>Users</h1>
+
+<form action="/users/new">
+
+    {% for user in users %}
+    <li><a href="/users/{{user.id}}">{{user.first_name}} {{user.last_name}}</a></li>
+    {% endfor %}
+    </ul>
+
+    <button class="add_button">Add User</button>
+
+</form>
+
+{% endblock %}
+<!-- This will show a list of users and when a client clicks on a user name, it'll
+take him/her to the details page about the user -->
+
+<!-- <li><a href="/users/{{user.id}}">{{user.first_name}} {{user.last_name}}</a></li> =
+When a user clicks on his/her first and last name, it'll take that user to 
+the URL (link), "/users/{{user.id}}", of that particular user -->
+
+<!-- Remember, anchor tags will turn the word (words) inside of the anchor tag into a 
+    url (link) that you had written next to it.  And when you click on that word 
+    ( which becomes equal to the URL, link that you wrote next to it), 
+    it will automatically put that url (link) into the browser search bar on top
+     and take you to that url (to that link) -->
+
+<!-- user = {id=1 first_name=Alan last_name=Alda image_url=https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png} -->
+
+<!-- #users = 
+# [<User id=1 first_name=Alan last_name=Alda image_url=https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png,
+#  <User id=2 first_name=Joel last_name=Burton image_url=https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png]
+ -->

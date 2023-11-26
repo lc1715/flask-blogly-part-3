@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block link %}
+<link rel="stylesheet" href="/static/app.css">
+{% endblock %}
+
+{% block content %}
+
+<form action="/users/{{user.id}}/edit" method="POST">
+
+    <label for="first_name">First Name</label>
+    <input type="text" name="first_name" id="first_name" placeholder="first_name" value={{user.first_name}}>
+    <label for="last_name">Last Name</label>
+    <input type="text" name="last_name" id="last_name" placeholder="last_name" value={{user.last_name}}>
+    <label for="image_url">Image URL</label>
+    <input type="text" name="image_url" id="image_url" placeholder="image_url" value={{user.image_url}}>
+
+    <button>Save</button>
+
+    <button formaction="/users/{{user.id}}" formmethod="GET">Cancel</button>
+</form>
+
+
+<!-- <form action="/users/{{user.id}}">
+    <button>Cancel</button>
+</form> -->
+
+{% endblock %}
+<!-- We are getting the user's info out of this user object bu writing the name fo the object and then the key-name.-->
+<!-- user = {User id=1 first_name=Alan last_name=Alda image_url=https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png} -->

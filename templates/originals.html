@@ -1,0 +1,52 @@
+<!-- My Original Solution for user_details.html Part One -->
+<!-- {% extends 'base.html' %}
+
+{% block link %}
+<link rel="stylesheet" href="/static/app.css">
+{% endblock %}
+
+{% block content %}
+
+<h1>User Detail Page</h1>
+
+<form action="/user/{{user.id}}/edit">
+
+    <img src={{user.image_url}} alt="{{user.first_name}}">
+
+    {{user.first_name}} {{user.last_name}}
+
+    <button>Edit</button>
+</form>
+
+
+<form action=" /users/{{user.id}}/delete">
+    <button>Delete</button>
+</form>
+
+{% endblock %} -->
+
+
+
+<!-- My Original Solution for edit_user_form.html Part One -->
+<!-- {% extends 'base.html' %}
+
+{% block content %}
+
+<form action="/users/{{user.id}}/edit" method="POST">
+
+    <label for="first_name">First Name</label>
+    <input type="text" name="first_name" id="first_name" placeholder="first_name" value={{user.first_name}}>
+    <label for="last_name">Last Name</label>
+    <input type="text" name="last_name" id="last_name" placeholder="last_name" value={{user.last_name}}>
+    <label for="image_url">Image URL</label>
+    <input type="text" name="image_url" id="image_url" placeholder="image_url" value={{user.image_url}}>
+
+    <button>Save</button>
+</form>
+
+
+<form action="/users/{{user.id}}">
+    <button>Cancel</button>
+</form>
+
+{% endblock %} -->
