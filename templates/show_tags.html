@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block link %}
+<link rel="stylesheet" href="/static/app.css">
+{% endblock %}
+
+{% block content %}
+
+<h1>Tags</h1>
+
+<form action="/tags/new">
+
+    {% for tag in tags%}
+    <li><a href="/tags/{{tag.id}}">{{tag.name}}</a></li>
+    {% endfor %}
+
+    <button>Add Tag</button>
+    <button formaction="/users" formmethod="GET">Cancel</button>
+
+</form>
+
+{% endblock %}

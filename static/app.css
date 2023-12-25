@@ -1,9 +1,5 @@
-/* body {
-    background-color: blue;
-} */
 
 img {
-    /* height: 5rem; */
     width: 15rem;
 }
 
@@ -26,9 +22,30 @@ li {
 
 button {
     margin-top: 1rem;
+    background-color: #6aa1f9;
+    border-radius: 8px;
+    padding: 6px;
+    font-weight: bold;
 }
 
-/* .add_button {
-    size: 20rem;
-    margin-top: 1rem;
-} */
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .taglist {
+    display: block;
+    margin-top: 20px;
+  }
+
+ 

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block link %}
+<link rel="stylesheet" href="/static/app.css">
+{% endblock %}
+
+{% block content %}
+
+<h1>Add Post for {{user.first_name}} {{user.last_name}}</h1>
+
+<form action="/users/{{user.id}}/posts/new" method="POST">
+
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title">
+    <label for="content">Content</label>
+    <input type="text" name="content" id="content">
+
+
+    {% for tag in tags %}
+    <label for="tag_name">{{tag.name}}</label>
+    <input type="checkbox" id="tag_name" name="tag_name" value="{{tag.name}}">
+    {% endfor %}
+
+    <button>Add</button>
+
+    <button formaction="/users/{{user.id}}" formmethod="GET">Cancel</button>
+</form>
+
+{% endblock %}

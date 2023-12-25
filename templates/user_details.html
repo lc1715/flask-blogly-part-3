@@ -20,10 +20,19 @@
 </form>
 
 
+<h2>Posts</h2>
 
+<form action="/users/{{user.id}}/posts/new">
+
+    {% for post in posts %}
+
+    <li><a href="/posts/{{post.id}}">{{post.title}}</a></li>
+
+    {% endfor %}
+
+    <button>Add Post</button>
+
+    <button formaction="/users" formmethod="GET">Cancel</button>
+</form>
 
 {% endblock %}
-<!-- We are getting the user's info out of this user object bu writing the name fo the object and then the key-name.-->
-<!-- user = {User id=1 first_name=Alan last_name=Alda image_url=https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png} -->
-<!-- There's another way you can write the button eleemtn in the same form adn each button will send to a
-different route. look at Microsoft One Note - Forms. -->

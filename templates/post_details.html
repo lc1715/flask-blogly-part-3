@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block link %}
+<link rel="stylesheet" href="/static/app.css">
+{% endblock %}
+
+{% block content %}
+
+<h1>{{post.title}}</h1>
+
+<p>{{post.content}}</p>
+
+By {{post.user.first_name}} {{post.user.last_name}} {{post.friendly_date}}
+
+<div class="taglist">
+    {% if tags %}
+    <b>Tags:</b>
+    {% for tag in tags %}
+    <a class="anchortaglist" href="/tags/{{tag.id}}">{{tag.name}}</a>
+    {% endfor %}
+    {% endif %}
+</div>
+
+<form>
+    <button formaction="/posts/{{post.id}}/edit" formmethod="GET">Edit</button>
+
+    <button formaction="/posts/{{post.id}}/delete" formmethod="POST">Delete</button>
+
+    <button formaction="/users/{{post.user_id}}">Cancel</button>
+</form>
+{% endblock %}
